@@ -1,6 +1,6 @@
 import React, {useState, useEffect, memo} from 'react';
 import {Modal, View, Text, StyleSheet, Image, Keyboard, TouchableOpacity, ScrollView} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNPickerSelect from 'react-native-picker-select';
 
 import Container from '~/componentes/tela/Container';

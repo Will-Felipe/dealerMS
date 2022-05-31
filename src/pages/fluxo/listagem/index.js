@@ -9,7 +9,7 @@ import {
   FlatList,
   PixelRatio,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Dimensions} from 'react-native';
 
 import Touchable from 'react-native-platform-touchable';
@@ -21,7 +21,7 @@ import {theme} from '~/core/theme';
 import {fonts} from '~/core/fonts';
 import {Modal} from 'react-native-paper';
 import TextInput from '~/componentes/tela/TextInput';
-import pickerSelectStyles from '~/assets/styles/pickerStyle';
+// import pickerSelectStyles from '~/assets/styles/pickerStyle';
 import RNPickerSelect from 'react-native-picker-select';
 import {Chevron} from 'react-native-shapes';
 import Button from '~/componentes/tela/Button';
@@ -128,6 +128,35 @@ const FluxoListagem = props => {
       elevation: 20,
     },
     
+  });
+
+  const pickerSelectStyles = StyleSheet.create({
+    inputIOS: {
+      fontSize: 17,
+      paddingVertical: 5,
+      paddingHorizontal: 10,
+      borderWidth: 2,
+      borderColor: '#f0f0f0',
+      borderRadius: 4,
+      color: 'white',
+      paddingRight: 35, // to ensure the text is never behind the icon
+      height: 45,
+    },
+    inputAndroid: {
+      fontSize: 17,
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      borderWidth: 3,
+      borderColor: '#f0f0f0',
+      borderRadius: 5,
+      color: 'white',
+      paddingRight: 35, // to ensure the text is never behind the icon
+      height: 45,
+    },
+    iconContainer: {
+      top: 17,
+      right: 20,
+    },
   });
 
   async function carregarFluxos(Page) {

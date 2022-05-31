@@ -23,7 +23,7 @@ import pickerSelectStyles from '~/assets/styles/pickerStyle';
 import RNPickerSelect from 'react-native-picker-select';
 import {Chevron} from 'react-native-shapes';
 import Button from '~/componentes/tela/Button';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import RadioGroup from 'react-native-radio-button-group';
 import stylesGeral from '~/styles';
 import {
@@ -448,9 +448,9 @@ console.log('fromdateixxx')
               //flex: 1,
               alignItems: 'center',
             }}>
-            <RadioGroup
-           // color = 'grey'
-           // activeColor = 'blue'
+            {/* <RadioGroup
+              // color = 'grey'
+              // activeColor = 'blue'
             style={styles.viewRadiogroup}
                   horizontal={true}
                   options={radioButtonsData}
@@ -459,7 +459,7 @@ console.log('fromdateixxx')
                   activeButtonId={1}
                   circleStyle={{ fillColor: 'white', borderColor: 'gray', borderWidth: 2,}}
                   
-            />
+            /> */}
    </View>
 
    <View

@@ -1,7 +1,7 @@
 import React, {useState, useEffect, memo, useRef} from 'react';
 
 import {Modal, View, Text, StyleSheet, Image, Keyboard, TouchableOpacity, Animated} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Container from '~/componentes/tela/Container';
 import Global from '~/config/Global';
@@ -441,9 +441,10 @@ function ImagePress(val){
           <TextInput
             label="Chassi"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '100%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Chassi}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
           />
       </View>
 
@@ -451,9 +452,10 @@ function ImagePress(val){
           <TextInput
             label="Placa"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '100%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Placa + ' - ' +Veiculo.Veiculo_Marca}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
           />
       </View>
 
@@ -461,16 +463,18 @@ function ImagePress(val){
           <TextInput
             label="Comb."
             styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Combustivel}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
           />
           <TextInput
             label="KM"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_KM}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
           />   
       </View>
 
@@ -478,35 +482,40 @@ function ImagePress(val){
            <TextInput
             label="Ano"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '33%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Ano_Modelo}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
           />
 
           <TextInput
             label="Dias"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '33%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Dias_Estoque}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
+            contextMenuHidden={true}
           />
 
           <TextInput
             label="Tipo"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '34%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Estoque_Tipo}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
           />
       </View>
 
-      <View style={{...stylesGeral.ViewCamposCadastro, flexDirection: 'row'}}>
+      <View style={{...stylesGeral.ViewCamposCadastro, justifyContent: 'center'}}>
           <TextInput
             label="Cor"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '100%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Cor}
-            editable={!false}
+            editable={false}
+            selection={{start:0}}
           />
       </View>
 
@@ -514,9 +523,10 @@ function ImagePress(val){
           <TextInput
             label="Empresa"
             styleContainer={{...stylesGeral.ContainerIpunts, width: '100%'}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             value={Veiculo.Veiculo_Empresa_Nome}
-            editable={!false}
+            editable={false}
+            selection={{start:0, end:0}}
           />
       </View>
 
@@ -584,7 +594,7 @@ function ImagePress(val){
           Reservar
         </Button>
       </View>
-      <View style={{ marginTop: 15, marginRight: 30, marginLeft: 30}}>
+      <View style={{ marginVertical: 15, marginRight: 30, marginLeft: 30}}>
         <Button mode="contained" onPress={_onSimulacaoPressed} >
           Custo
         </Button>

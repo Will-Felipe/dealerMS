@@ -198,7 +198,7 @@ const [osData, setOsData] = useState({});
         <ScrollView horizontal={true}>
           <View>
             <Table borderStyle={{borderColor: '#C1C0B9'}}>
-              <Row widthArr={state.widthArr} data={state.tableHead} widthArr={state.widthArr} style={styles.head} textStyle={styles.text}/>
+              <Row widthArr={state.widthArr} data={state.tableHead} style={styles.head} textStyle={styles.text}/>
             </Table>
             <ScrollView style={styles.dataWrapper}>
               <Table borderStyle={{borderColor: '#C1C0B9'}}>

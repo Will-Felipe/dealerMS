@@ -21,16 +21,20 @@ export default class PropostaCustos extends React.Component{
                     <TextInput
                         label="Valor venda"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
                         value={'R$ ' + this.props.PropostaD.Proposta_Valor}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     <TextInput
                         label="Custo"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
                         value={'R$ ' + this.props.PropostaD.Proposta_CustoTotal}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     </View>
 
@@ -38,16 +42,20 @@ export default class PropostaCustos extends React.Component{
                     <TextInput
                         label="Lucro gerencial"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '60%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
                         value={'R$ ' + this.props.PropostaD.Proposta_Margem}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     <TextInput
                         label="%"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '40%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
                         value={this.props.PropostaD.Proposta_PercMargem + '%'}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     </View>
                 </View>

@@ -118,16 +118,20 @@ const [osData, setOsData] = useState({});
                     <TextInput
                         label="Ordem de Serviço"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '60%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
-                        value={'' + props.OSs.OS_Codigo}
+                        value={props.OSs.OS_Codigo ? '' + props.OSs.OS_Codigo : ' '}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     <TextInput
                         label="Dt. Abertura"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '40%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
-                        value={ moment(props.OSs.OS_DataAberturao).format('DD-MM-YY')}
+                        value={props.OSs.OS_DataAberturao ? moment(props.OSs.OS_DataAberturao).format('DD-MM-YY') : ' '}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     </View>
 
@@ -135,16 +139,20 @@ const [osData, setOsData] = useState({});
                     <TextInput
                         label="Consultor Técnico"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '70%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
-                        value={props.OSs.TipoOS_ConsultorTecnico}
+                        value={props.OSs.TipoOS_ConsultorTecnico ? props.OSs.TipoOS_ConsultorTecnico : ' '}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     <TextInput
                         label="Tipo O.S"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '30%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
-                        value={props.OSs.TipoOS_Sigla}
+                        value={props.OSs.TipoOS_Sigla ? props.OSs.TipoOS_Sigla : ' '}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                     </View>
                 </View>
@@ -162,7 +170,7 @@ const [osData, setOsData] = useState({});
                     <ScrollView horizontal={true}>
                     <View>
                         <Table borderStyle={{borderColor: '#C1C0B9'}}>
-                        <Row widthArr={state.widthArr} data={state.tableHead} widthArr={state.widthArr} style={styles.head} textStyle={styles.text}/>
+                        <Row widthArr={state.widthArr} data={state.tableHead} style={styles.head} textStyle={styles.text}/>
                         </Table>
                         <ScrollView style={styles.dataWrapper}>
                         <Table borderStyle={{borderColor: '#C1C0B9'}}>
@@ -193,7 +201,7 @@ const [osData, setOsData] = useState({});
                     <ScrollView horizontal={true}>
                     <View>
                         <Table borderStyle={{borderColor: '#C1C0B9'}}>
-                        <Row widthArr={state.widthArrProd} data={state.tableHeadProd} widthArr={state.widthArrProd} style={styles.head} textStyle={styles.text}/>
+                        <Row widthArr={state.widthArrProd} data={state.tableHeadProd} style={styles.head} textStyle={styles.text}/>
                         </Table>
                         <ScrollView style={styles.dataWrapper}>
                         <Table borderStyle={{borderColor: '#C1C0B9'}}>
@@ -218,9 +226,11 @@ const [osData, setOsData] = useState({});
                 <TextInput
                         label="Total por Tipo de O.S"
                         styleContainer={{...stylesGeral.ContainerIpunts, textAlign: 'right', width: '100%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
                         value={'R$ ' + totalTipoOsS}
+                        editable={false}
+                        selection={{start:0, end:0}}
                     />
                 </View>
 

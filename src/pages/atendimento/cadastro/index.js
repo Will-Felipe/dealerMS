@@ -8,7 +8,7 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Container from '~/componentes/tela/Container';
 import Global from '~/config/Global';
@@ -368,7 +368,7 @@ const AtendimentosCadastro = props => {
             <TextInput
               label="Natureza do Atendimento"
               styleContainer={stylesGeral.ContainerIpunts}
-              styleInput={{height: 45}}
+              styleInput={{}}
               returnKeyType="next"
               value={NaturezaAtendimentoDesc.value}
               //onChangeText={text => setNome({value: text, error: ''})}
@@ -412,7 +412,7 @@ const AtendimentosCadastro = props => {
             <TextInput
               label="Meio de contato"
               styleContainer={stylesGeral.ContainerIpunts}
-              styleInput={{height: 45}}
+              styleInput={{}}
               returnKeyType="next"
               value={MeioContatoDesc.value}
               //onChangeText={text => setNome({value: text, error: ''})}
@@ -453,7 +453,7 @@ const AtendimentosCadastro = props => {
             <TextInput
               label="Mídia"
               styleContainer={stylesGeral.ContainerIpunts}
-              styleInput={{height: 45}}
+              styleInput={{}}
               returnKeyType="next"
               value={MidiaDesc.value}
               //onChangeText={text => setNome({value: text, error: ''})}
@@ -525,7 +525,7 @@ const AtendimentosCadastro = props => {
           <TextInput
             label="Nome"
             styleContainer={stylesGeral.ContainerIpunts}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={Nome.value}
             onChangeText={text => setNome({value: text, error: ''})}
@@ -542,7 +542,7 @@ const AtendimentosCadastro = props => {
           <TextInput
             label="CPF/CNPJ"
             styleContainer={stylesGeral.ContainerIpunts}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={CPF_CNPJ.value}
             onChangeText={text => setCPFCNPJ({value: text, error: ''})}
@@ -560,7 +560,7 @@ const AtendimentosCadastro = props => {
           <TextInput
             label="Email"
             styleContainer={stylesGeral.ContainerIpunts}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={Email.value}
             onChangeText={text => setEmail({value: text, error: ''})}
@@ -577,7 +577,7 @@ const AtendimentosCadastro = props => {
           <TextInput
             label="DDD"
             styleContainer={{...stylesGeral.ContainerIpunts, width: 70}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={DDD1.value}
             onChangeText={text => setDDD1({value: text, error: ''})}
@@ -597,7 +597,7 @@ const AtendimentosCadastro = props => {
               width: 180,
               marginLeft: 20,
             }}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={Telefone1.value}
             onChangeText={text => setTelefone1({value: text, error: ''})}
@@ -615,7 +615,7 @@ const AtendimentosCadastro = props => {
           <TextInput
             label="DDD"
             styleContainer={{...stylesGeral.ContainerIpunts, width: 70}}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={DDD2.value}
             onChangeText={text => setDDD2({value: text, error: ''})}
@@ -635,7 +635,7 @@ const AtendimentosCadastro = props => {
               width: 180,
               marginLeft: 20,
             }}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={Telefone2.value}
             onChangeText={text => setTelefone2({value: text, error: ''})}
@@ -653,7 +653,7 @@ const AtendimentosCadastro = props => {
           <TextInput
             label="Assunto"
             styleContainer={stylesGeral.ContainerIpunts}
-            styleInput={{height: 45}}
+            styleInput={{}}
             returnKeyType="next"
             value={Assunto.value}
             onChangeText={text => setAssunto({value: text, error: ''})}

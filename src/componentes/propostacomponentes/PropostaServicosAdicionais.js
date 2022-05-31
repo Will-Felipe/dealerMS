@@ -25,9 +25,11 @@ export default class PropostaServicosAdicionais extends React.Component{
             <TextInput
               label="Tipo"
               styleContainer={{...stylesGeral.ContainerIpunts, width: '88%',}}
-              styleInput={{height: 45}}
+              styleInput={{}}
               returnKeyType="next"
               value={servico.ServicoAdicional_Descricao}
+              editable={false}
+              selection={{start:0, end:0}}
             />
           </View>
 
@@ -35,9 +37,11 @@ export default class PropostaServicosAdicionais extends React.Component{
             <TextInput
               label=" Valor"
               styleContainer={{...stylesGeral.ContainerIpunts, width: '40%',}}
-              styleInput={{height: 45}}
+              styleInput={{}}
               returnKeyType="next"
               value={'R$ ' + servico.ServicoAdicional_Valor}
+              editable={false}
+              selection={{start:0, end:0}}
             />
           </View>
           

@@ -52,10 +52,10 @@ const LoginScreen = ({navigation}) => {
     if (__DEV__) {
       require('react-devtools');
       import('~/config/ReactotronConfig');
-      //email.value = 'FERNANDO.DESENVAPP';
-      //password.value = 'Dealernet@133';
-      //email.value = 'volney';
-      //password.value = 'Dealer@2020';
+      // email.value = 'FERNANDO.DESENVAPP';
+      // password.value = 'Dealernet@133';
+      email.value = 'acao.denis';
+      password.value = 'Denis@2021';
     }
 
     const usuarioError = usuarioValidator(email.value);

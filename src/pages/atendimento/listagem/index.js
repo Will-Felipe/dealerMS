@@ -9,7 +9,7 @@ import {
   FlatList,
   PixelRatio,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Dimensions} from 'react-native';
 
 import Touchable from 'react-native-platform-touchable';

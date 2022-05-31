@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: theme.colors.surface,
     width: '100%',
+    maxHeight: 48
   },
   error: {
     fontSize: 14,

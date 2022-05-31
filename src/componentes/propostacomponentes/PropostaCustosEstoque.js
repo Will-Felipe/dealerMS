@@ -1,6 +1,8 @@
-import React, {useState, useEffect, memo} from 'react';
+import React, { createRef, useState, useEffect, memo} from 'react';
 import {View, Image, ScrollView, Dimensions, Text, StyleSheet, TouchableHighlight} from 'react-native';
 import TextInput from '~/componentes/tela/TextInput';
+import {TextInput as Input} from 'react-native-paper';
+import {TextInputMask} from 'react-native-masked-text';
 import Button from '~/componentes/tela/Button';
 import {getEstoqueVeiculos, getCustosVeiculoSimulacao} from '~/servicos/auth';
 import Loader from '~/componentes/loading/Loader';
@@ -25,6 +27,7 @@ const PropostaCustosEstoque = props => {
     const [loading, setLoading] = useState(false);
     const [TotalAgregado, setTotalAgregado] = useState([]);
     const [ValoresAgregados, setValoresAgregados] = useState([]);
+    const ref = createRef();
   
 
     const [inicioUseEffect, setinicioUseEffect] = useState(true);
@@ -50,8 +53,9 @@ async function _onCalcularPressed() {
 const getCustosVeiculoSimulacaoGet = async function() 
 {
     setLoading(true);
+    console.log(ValorSimulacaoNew)
     
-    let preco = parseFloat(ValorSimulacaoNew ? ValorSimulacaoNew.replace('.','').replace(',', '.') : props.PropostaD.Proposta_Valor.replace('.','').replace(',', '.')) 
+    let preco = parseFloat(ValorSimulacaoNew ? ValorSimulacaoNew.replace('R$','').replace('.','').replace(',', '.') : props.PropostaD.Proposta_Valor.replace('.','').replace(',', '.')) 
 
     let data = await getCustosVeiculoSimulacao(
     'C',
@@ -110,7 +114,6 @@ const getCustosVeiculoSimulacaoGet = async function()
 
 
         return(
-                     
             <ScrollView pagingEnabled 
                 onScroll={this.change}
                 showsHorizontalScrollIndicator={true}>
@@ -121,17 +124,27 @@ const getCustosVeiculoSimulacaoGet = async function()
                     <TextInput
                         label="Valor Simulação"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-                        styleInput={{height: 45}}
-                        returnKeyType="next"
-                        value={ ValorSimulacaoNew}
-                        onChangeText={text => setValorSimulacaoNew(text)}
+                        styleInput={{}}
+                        keyboardType="numeric"
+                        value={ValorSimulacaoNew ? ValorSimulacaoNew : ' '}
+                        // onChangeText={text => setValorSimulacaoNew(text)}
+                        render={(props) => (
+                            <TextInputMask
+                            {...props}
+                            // value={ValorSimulacaoNew}
+                            type={'money'}
+                            ref={ref}
+                            onChangeText={text => setValorSimulacaoNew(text)}
+                            />
+                        )}
                     />
                     <TextInput
                         label="Total Custo"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-                        styleInput={{height: 45}}
+                        styleInput={{}}
                         returnKeyType="next"
                         value={'R$ ' + PropostaD.Proposta_CustoTotal}
+                        editable={false}
                     />
                     </View>
 
@@ -139,16 +152,18 @@ const getCustosVeiculoSimulacaoGet = async function()
                     <TextInput
                         label="Resultado"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '60%' }}
-                        styleInput={{height: 45, backgroundColor: PropostaD.Proposta_Margem.includes("-") ? "#FF0000" : "#fff",}}
+                        styleInput={{backgroundColor: PropostaD.Proposta_Margem.includes("-") ? "#FF0000" : "#fff",}}
                         returnKeyType="next"
-                        value={'R$ ' + PropostaD.Proposta_Margem}
+                        value={PropostaD.Proposta_Margem ? 'R$ ' + PropostaD.Proposta_Margem : ''}
+                        editable={false}
                     />
                     <TextInput
                         label="%"
                         styleContainer={{...stylesGeral.ContainerIpunts, width: '40%'}}
-                        styleInput={{height: 45, backgroundColor: PropostaD.Proposta_Margem.includes("-") ? "#FF0000" : "#fff",}}
+                        styleInput={{backgroundColor: PropostaD.Proposta_Margem.includes("-") ? "#FF0000" : "#fff",}}
                         returnKeyType="next"
-                        value={PropostaD.Proposta_PercMargem + '%'}
+                        value={PropostaD.Proposta_PercMargem ? PropostaD.Proposta_PercMargem + '%' : ''}
+                        editable={false}
                     />
                     </View>
                 </View>

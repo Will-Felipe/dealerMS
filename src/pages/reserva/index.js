@@ -1,6 +1,6 @@
 import React, {useState, useEffect, memo} from 'react';
 import {View, Text, StyleSheet, Image, Alert} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Container from '~/componentes/tela/Container';
 import Global from '~/config/Global';

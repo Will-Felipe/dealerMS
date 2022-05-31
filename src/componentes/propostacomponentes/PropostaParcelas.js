@@ -26,9 +26,11 @@ export default class PropostaParcelas extends React.Component{
                   <TextInput
                     label="Tipo"
                     styleContainer={{...stylesGeral.ContainerIpunts, width: '100%'}}
-                    styleInput={{height: 45}}
+                    styleInput={{}}
                     returnKeyType="next"
                     value={parcela.Parcela_Descricao}
+                    editable={false}
+                    selection={{start:0, end:0}}
                   />
                 </View>
 
@@ -36,16 +38,20 @@ export default class PropostaParcelas extends React.Component{
                   <TextInput
                     label="Vencimento"
                     styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-                    styleInput={{height: 45}}
+                    styleInput={{}}
                     returnKeyType="next"
                     value={moment(parcela.PropostaParcela_DataVencimento).format('DD-MM-YYYY')}
+                    editable={false}
+                    selection={{start:0, end:0}}
                   />
                   <TextInput
                     label="Valor"
                     styleContainer={{...stylesGeral.ContainerIpunts, width: '50%'}}
-                    styleInput={{height: 45}}
+                    styleInput={{}}
                     returnKeyType="next"
                     value={'R$ ' + parcela.Parcela_Valor}
+                    editable={false}
+                    selection={{start:0, end:0}}
                   />
                 </View>
 
@@ -53,14 +59,16 @@ export default class PropostaParcelas extends React.Component{
                   <TextInput
                     label="Observações"
                     styleContainer={{...stylesGeral.ContainerIpunts, width: '100%'}}
-                    styleInput={{height: 45}}
+                    styleInput={{}}
                     returnKeyType="next"
                     value={parcela.PropostaParcela_Observacao}
+                    editable={false}
+                    selection={{start:0, end:0}}
                   />
                 </View>
 
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                  <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                  <View style={{flex: 1, height: 1, backgroundColor: 'black', marginBottom: 10}} />
                 </View>
 
               </View>
